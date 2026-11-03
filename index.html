@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esports Bracket Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🏆 Esports Bracket Predictor</h1>
+  <p>Pick the winner of every match. A round only locks once <b>every</b> match is paired and picked.</p>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="controls">
+      <label>Teams
+        <select id="size">
+          <option>4</option><option>8</option><option selected>16</option><option>32</option>
+        </select>
+      </label>
+      <button id="newBtn">New Tournament</button>
+      <button id="lockBtn" class="primary" disabled>Lock Round &amp; Simulate</button>
+      <div class="score">Score: <b id="score">0</b></div>
+    </div>
+    <p id="status" class="status"></p>
+    <div id="bracket" class="bracket"></div>
+  </section>
+
+  <section class="panel">
+    <h2>⚠️ Incomplete Bracket Lab</h2>
+    <p>The game above only allows sizes that pair up completely (powers of two). Here, try a size that doesn't.
+       All teams are treated as <b>equal strength</b>, so any difference in title odds is caused purely by the bracket shape.</p>
+    <div class="controls">
+      <label>Teams: <input type="number" id="labN" min="3" max="32" value="6"></label>
+      <button id="labBtn" class="primary">Run 20,000 simulations</button>
+    </div>
+    <p id="labInfo" class="status"></p>
+    <div id="labBars"></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="divider"></div>
+  <p>Made with <span class="heart">♥</span> by <span class="author">Ankit Rawat</span></p>
+  <small>Esports Bracket Predictor &middot; Predict. Simulate. Conquer.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
